@@ -3,9 +3,8 @@ package free.guru.backend.mapper;
 import free.guru.backend.dto.AccountDto;
 import free.guru.backend.entity.AccountEntity;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mapstruct.factory.Mappers;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.sql.Timestamp;
@@ -13,12 +12,8 @@ import java.util.UUID;
 
 @SpringBootTest
 public class AccountMapperTest {
+    @Autowired
     private AccountMapper accountMapper;
-
-    @BeforeEach
-    public void setUp() {
-        accountMapper = Mappers.getMapper(AccountMapper.class);
-    }
 
     @Test
     public void accountMapperTest_NotNull() {
