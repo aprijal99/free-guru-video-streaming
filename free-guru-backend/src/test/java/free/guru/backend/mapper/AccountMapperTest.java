@@ -34,17 +34,18 @@ public class AccountMapperTest {
         AccountDto accountDto = accountMapper.entityToDto(accountEntity);
 
         Assertions.assertNotNull(accountDto);
-
-        System.out.println(accountDto);
     }
 
     @Test
     public void dtoToEntityTest_Success() {
-        AccountDto accountDto = new AccountDto("Aprijal Ghiyas Setiawan", "aprijalghiyas@gmail.com", "subang12345");
+        AccountDto accountDto = new AccountDto(
+                "Aprijal Ghiyas Setiawan",
+                "aprijalghiyas@gmail.com",
+                "subang12345"
+        );
+
         AccountEntity accountEntity = accountMapper.dtoToEntity(accountDto);
 
         Assertions.assertNotNull(accountEntity);
-
-        System.out.println(accountEntity);
     }
 }
